@@ -1,0 +1,32 @@
+<form (Submit)="onSubmit()">x
+<mat-form-field>
+    <mat-label>Titre</mat-label>
+    <input matInput type="text">
+</mat-form-field>
+
+<mat-form-field>
+    <mat-label>Auteur</mat-label>
+    <mat-select *ngFor="let author in authors">
+        <mat-option [value]='author.id'> {{author.first_name}} {{author.last_name}}</mat-option>
+    </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+    <mat-label>Nombre de Pages</mat-label>
+    <input matInput type="number">
+</mat-form-field>
+
+<mat-form-field>
+    <mat-label>Prix</mat-label>
+    <input matInput type="number">
+</mat-form-field>
+
+<mat-form-field>
+    <mat-label>Select</mat-label>
+    <mat-select *ngFor="let type in bookType">
+        <mat-option [value]='bookType'>{{bookType}}</mat-option>
+
+    </mat-select>
+</mat-form-field>
+
+</form>

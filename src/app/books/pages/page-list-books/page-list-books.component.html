@@ -1,0 +1,33 @@
+<table *ngIf='books.length ; else notAvailable'>
+  <caption>
+    Liste des livres disponibles
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col">Titre</th>
+      <th scope="col">Auteur</th>
+      <th scope="col">Genre</th>
+      <th scope="col">Nb pages</th>
+      <th scope="col">Prix</th>
+      <th scope="col">Disponibilité</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of books">
+      <td><a [routerLink]="['/page-detail-book', book.bookId]">{{book.title}}</a></td>
+      <td>{{book.author}}</td>
+      <td>{{book.bookType}}</td>
+      <td>{{book.nbPages}}</td>
+      <td>{{book.price}}</td>
+      <td>{{book.available}}"</td>
+      <td> <button mat-icon-button>
+          <mat-icon>edit</mat-icon>
+        </button> <button mat-icon-button>
+          <mat-icon>delete</mat-icon>
+        </button></td>
+    </tr>
+  </tbody>
+</table>
+<ng-template #notAvailable>Pas de livres disponibles</ng-template>
+<button mat-raised-button	>Ajouter</button>
