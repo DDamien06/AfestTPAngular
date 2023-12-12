@@ -1,0 +1,31 @@
+  <mat-toolbar>
+    <button mat-icon-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <button mat-icon-button>
+      <mat-icon>home</mat-icon>
+    </button>
+    
+    <span> Ma Bibliothèque</span>
+    <span class="space"></span>
+    
+    <button mat-icon-button class="favorite-icon" aria-label="heart-icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+   
+    <button mat-icon-button class="share-icon" aria-label="share-icon">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+
+
+  <mat-drawer-container class="container" autosize>
+    <mat-drawer #drawer class="myMenu" mode="side">
+      <app-nav></app-nav>>
+    </mat-drawer>  
+
+    <div> <app-page-list-books></app-page-list-books> </div>
+
+  </mat-drawer-container>
+
