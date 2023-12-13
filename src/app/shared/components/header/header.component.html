@@ -22,10 +22,12 @@
 
   <mat-drawer-container class="container" autosize>
     <mat-drawer #drawer class="myMenu" mode="side">
-      <app-nav></app-nav>>
+      <app-nav></app-nav>
     </mat-drawer>  
 
-    <div> <app-page-list-books></app-page-list-books> </div>
+    <div>
+      <router-outlet></router-outlet>
+   </div>
 
   </mat-drawer-container>
 

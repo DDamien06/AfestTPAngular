@@ -7,13 +7,24 @@ import {MatSidenav, MatSidenavModule} from '@angular/material/sidenav';
 import { NavComponent } from "../nav/nav.component";
 import { NgIf } from '@angular/common';
 import { PageListBooksComponent } from "../../../books/pages/page-list-books/page-list-books.component";
+import { RouterOutlet } from '@angular/router';
 
 @Component({
     selector: 'app-header',
     standalone: true,
     templateUrl: './header.component.html',
     styleUrl: './header.component.scss',
-    imports: [NgIf, MatToolbarModule, MatButtonModule, MatIconModule, MatTooltipModule, MatSidenavModule, NavComponent, PageListBooksComponent]
+    imports: [
+      NgIf,
+      MatToolbarModule,
+      MatButtonModule,
+      MatIconModule,
+      MatTooltipModule,
+      MatSidenavModule,
+      NavComponent,
+      PageListBooksComponent,
+      RouterOutlet
+    ]
 })
 export class HeaderComponent {
 
