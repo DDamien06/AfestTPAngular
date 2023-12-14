@@ -1,0 +1,28 @@
+[
+    {
+        "bookId": 1,
+        "title":"Le petit poucet",
+        "author" :  {
+                    "authorId": 1,
+                    "first_name": "jean",
+                    "last_name": "PIERRE"
+                    },
+        "nbPages": 75,
+        "price": 19,
+        "bookType":"BookType.POESIE",
+        "available": true
+    },
+    {
+        "bookId": 2,
+        "title": "Mars Attack",
+        "author":   {
+                    "authorId": 2,
+                    "first_name": "michel",
+                    "last_name": "BERNARD"
+                    },
+        "nbPages":751,
+        "price": 25,
+        "bookType":"BookType.FANTASIE",
+        "available": true
+    }
+]

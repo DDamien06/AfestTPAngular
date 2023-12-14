@@ -1,5 +1,5 @@
 <h2>Login</h2>
-<form>
+<form (ngSubmit)="onSubmit()">
     <div>
         <label>Username</label>
         <input type="text">
@@ -8,4 +8,5 @@
         <label>Password</label>
         <input type="password">
     </div>
+    <button mat-raised-button color="primary" type="submit">Connexion</button>
 </form>

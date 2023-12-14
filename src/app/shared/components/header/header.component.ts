@@ -7,7 +7,7 @@ import {MatSidenav, MatSidenavModule} from '@angular/material/sidenav';
 import { NavComponent } from "../nav/nav.component";
 import { NgIf } from '@angular/common';
 import { PageListBooksComponent } from "../../../books/pages/page-list-books/page-list-books.component";
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
     selector: 'app-header',
@@ -23,7 +23,8 @@ import { RouterOutlet } from '@angular/router';
       MatSidenavModule,
       NavComponent,
       PageListBooksComponent,
-      RouterOutlet
+      RouterOutlet,
+      RouterLink
     ]
 })
 export class HeaderComponent {

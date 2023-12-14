@@ -1,1 +1,5 @@
-<p>page-list-authors works!</p>
+<h2>La liste des Auteurs</h2>
+<ul *ngFor="let author of authors">
+    <li><a [routerLink]="['/authors', author.authorId]">{{author.first_name}} {{author.last_name}}</a></li>
+</ul>
+<button mat-raised-button>Ajouter un nouvel Auteur</button>

@@ -3,13 +3,19 @@ import { PageListBooksComponent } from './books/pages/page-list-books/page-list-
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PageDetailBookComponent } from './books/pages/page-detail-book/page-detail-book.component';
 import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './shared/components/home/home.component';
+import { PageListAuthorsComponent } from './authors/pages/page-list-authors/page-list-authors.component';
+import { PageDetailAuthorComponent } from './authors/pages/page-detail-author/page-detail-author.component';
 
 export const routes: Routes = [
-    {path:'page-list-books', component: PageListBooksComponent},
-    {path:'page-detail-book', component: PageDetailBookComponent},
+    {path:'authors', component: PageListAuthorsComponent},
+    {path:'authors/:id', component: PageDetailAuthorComponent},
+
+    {path:'books', component: PageListBooksComponent},
+    {path:'books/:id', component: PageDetailBookComponent},
+
     {path:'login', component: LoginComponent, title: 'login page'},
-
     
-
+    {path:'', component:HomeComponent},
     {path:'**', component: PageNotFoundComponent}
 ];

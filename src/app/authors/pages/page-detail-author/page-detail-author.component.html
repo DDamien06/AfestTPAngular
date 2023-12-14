@@ -1,0 +1,22 @@
+<div *ngIf='author$ | async ; else notAvailable'>
+<h1>AUTEUR : {{authorDetail?.first_name}} {{authorDetail?.last_name}}</h1>
+<div>{{(author$ | async)?.first_name}}</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<ng-template #notAvailable><h2>OUPS ! L'auteur n'existe pas</h2></ng-template>
+
+<div class="button">
+    <button mat-raised-button (click)="goPreviousPage()">Précedent</button>
+    <button mat-raised-button (click)="goNextPage()">Suivant</button>
+    <a routerLink='/authors'><button mat-raised-button color="primary">Retour aux Auteurs</button></a>
+</div>

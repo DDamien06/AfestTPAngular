@@ -3,18 +3,20 @@
       <mat-icon>menu</mat-icon>
     </button>
 
+    <a routerLink="/">
     <button mat-icon-button>
       <mat-icon>home</mat-icon>
     </button>
+    </a>
     
     <span> Ma Bibliothèque</span>
     <span class="space"></span>
     
-    <button mat-icon-button class="favorite-icon" aria-label="heart-icon">
+    <button mat-icon-button class="favorite-icon" aria-label="heart-icon" matTooltip="Ajouter en Favoris">
       <mat-icon>favorite</mat-icon>
     </button>
    
-    <button mat-icon-button class="share-icon" aria-label="share-icon">
+    <button mat-icon-button class="share-icon" aria-label="share-icon" matTooltip="Partager">
       <mat-icon>share</mat-icon>
     </button>
   </mat-toolbar>
@@ -25,7 +27,7 @@
       <app-nav></app-nav>
     </mat-drawer>  
 
-    <div>
+    <div  class="myContent">
       <router-outlet></router-outlet>
    </div>
 

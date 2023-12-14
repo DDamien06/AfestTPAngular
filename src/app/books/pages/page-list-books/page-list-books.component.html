@@ -15,12 +15,23 @@
   </thead>
   <tbody>
     <tr *ngFor="let book of books">
-      <td><a [routerLink]="['/page-detail-book', book.bookId]">{{book.title}}</a></td>
-      <td>{{book.author}}</td>
+      <td><a [routerLink]="['/books', book.bookId]">{{book.title}}</a></td>
+      <td>{{book.author.first_name}} {{book.author.last_name}}</td>
       <td>{{book.bookType}}</td>
       <td>{{book.nbPages}}</td>
-      <td>{{book.price}}</td>
-      <td>{{book.available}}"</td>
+      <td>{{book.price | currency:'EUR':'symbol'}}</td>
+      <td>
+      <mat-slide-toggle 
+        [checked]='book.available'
+        >dispo ?
+    
+      </mat-slide-toggle>
+    
+    </td>
+     
+     
+     
+     
       <td> <button mat-icon-button>
           <mat-icon>edit</mat-icon>
         </button> <button mat-icon-button>
@@ -30,4 +41,4 @@
   </tbody>
 </table>
 <ng-template #notAvailable>Pas de livres disponibles</ng-template>
-<button mat-raised-button	>Ajouter</button>
+<button mat-raised-button	>Ajouter un nouveau livre</button>

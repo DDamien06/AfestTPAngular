@@ -1,0 +1,12 @@
+[
+    {
+        "authorId":1,
+        "first_name":"Jean",
+        "last_name":"PIERRE"
+    },
+    {
+        "authorId":2,
+        "first_name":"Michel",
+        "last_name":"BERNARD"
+    }
+]
