@@ -20,8 +20,8 @@ export class PageDetailAuthorComponent implements OnInit, OnDestroy {
   sub!:Subscription;
   public id: number;
   public author$: Observable<Author|null>;
-  public authorDetail:Author|null=null;
-  public authorExist:boolean=true;
+  //public authorDetail:Author|null=null;
+  //public authorExist:boolean=true;
 
 
   constructor(
@@ -31,10 +31,6 @@ export class PageDetailAuthorComponent implements OnInit, OnDestroy {
     this.id = Number(activateRoute.snapshot.params['id']);
     this.author$ = this.authorService.getAuthorById(this.id);
   }
-  ngOnDestroy(): void {
-    this.sub.unsubscribe()
-  }
-
 
 goPreviousPage():void{
   this.router.navigate(['authors',this.id-1])
@@ -62,4 +58,9 @@ this.refreshTable();
     }
   })
   }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe()
+  }
+
 }

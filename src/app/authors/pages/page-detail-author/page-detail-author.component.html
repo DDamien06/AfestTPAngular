@@ -1,7 +1,10 @@
 <div *ngIf='author$ | async ; else notAvailable'>
-<h1>AUTEUR : {{authorDetail?.first_name}} {{authorDetail?.last_name}}</h1>
-<div>{{(author$ | async)?.first_name}}</div>
-
+<h1>AUTEUR : {{(author$| async)?.first_name}} {{(author$ | async)?.last_name}}</h1>
+<div><p>Nom : {{(author$ | async)?.last_name}}<br>
+    Prénom : {{(author$ | async)?.first_name}}<br>
+    Auteur des livres : <!--{{(author$ | async)?.}}<br> -->
+</p>
+</div>
 
 
 

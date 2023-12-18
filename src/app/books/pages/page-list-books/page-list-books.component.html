@@ -1,4 +1,4 @@
-<table *ngIf='books.length ; else notAvailable'>
+<table *ngIf='collection$ | async as books ; else notAvailable'>
   <caption>
     Liste des livres disponibles
   </caption>
@@ -16,8 +16,9 @@
   <tbody>
     <tr *ngFor="let book of books">
       <td><a [routerLink]="['/books', book.bookId]">{{book.title}}</a></td>
-      <td>{{book.author.first_name}} {{book.author.last_name}}</td>
-      <td>{{book.bookType}}</td>
+     <td>/ <!--{{book.author.first_name}} {{book.author.last_name}}--></td>
+      <td> {{book.bookType}} </td>
+     <!-- <td>{{book.bookType}}</td> -->
       <td>{{book.nbPages}}</td>
       <td>{{book.price | currency:'EUR':'symbol'}}</td>
       <td>

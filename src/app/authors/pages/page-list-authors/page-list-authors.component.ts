@@ -1,10 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Author } from '../../model/author';
-import { NgFor } from '@angular/common';
+import { NgFor} from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { AuthorService } from '../../services/author.service';
 import { subscribe } from 'diagnostics_channel';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-page-list-authors',
@@ -15,7 +15,7 @@ import { Subscription } from 'rxjs';
 })
 export class PageListAuthorsComponent implements OnInit,OnDestroy {
 
-  authors: Author[] = []
+  authors: Author[] | undefined;
   sub!:Subscription;
   errorMessage: string = 'error'
 

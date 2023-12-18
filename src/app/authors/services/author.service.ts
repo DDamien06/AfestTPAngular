@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams , HttpHeaders} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, map } from 'rxjs';
 import { Book } from '../../books/model/book';
@@ -10,12 +10,11 @@ import { Author } from '../model/author';
 export class AuthorService {
 
   private authorUrl = 'assets/authors.json';
-  private collection$:BehaviorSubject<Author[]>
+  //private authorUrl = 'http://localhost:8080/authors';
+
 
 
   constructor(private http: HttpClient) {
-    this.collection$=new BehaviorSubject<Author[]>([]);
-    this.refreshCollection();
   }
 
 
@@ -35,10 +34,12 @@ export class AuthorService {
     }));
   }
 
-public refreshCollection(){
-  this.http.get<Author[]>(this.authorUrl).subscribe((data)=> {
-    this.collection$.next(data);
-  });
+public addAuthor(item : Author): Observable<Author>{
+  return this.http.post<Author>(this.authorUrl, item)
+}
+
+public deleteAuthor(id:number): Observable<Author>{
+  return this.http.delete<Author>(`${this.authorUrl}/{'id'}`)
 }
 
 }
