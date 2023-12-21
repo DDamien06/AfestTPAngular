@@ -3,7 +3,7 @@ import { Book } from '../../model/book';
 import { BookService } from '../../services/book.service';
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
-import { RouterLink } from '@angular/router';
+import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { BookType } from '../../model/book-type';
 import { CurrencyPipe } from '@angular/common';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
@@ -24,10 +24,7 @@ export class PageListBooksComponent implements OnInit{
   public collection$: BehaviorSubject<Book[]>;
  
 
-
-
-  
-  constructor(private bookService:BookService){
+  constructor(private bookService:BookService, private router: Router){
     this.collection$=this.bookService.collection$;
    }
   
@@ -39,8 +36,7 @@ export class PageListBooksComponent implements OnInit{
   }
 
 
-//  ngOnDestroy():void{
- //   this.sub.unsubscribe()
+
 }
 
   

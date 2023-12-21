@@ -4,7 +4,7 @@ import { NgFor} from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { AuthorService } from '../../services/author.service';
 import { subscribe } from 'diagnostics_channel';
-import { Observable, Subscription } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-page-list-authors',
@@ -16,18 +16,25 @@ import { Observable, Subscription } from 'rxjs';
 export class PageListAuthorsComponent implements OnInit,OnDestroy {
 
   authors: Author[] | undefined;
-  sub!:Subscription;
+  sub = new Subscription();
   errorMessage: string = 'error'
+
+  //private bs = new BehaviorSubject('t');
+  //readonly bs$ = this.bs.asObservable();
 
   constructor(private authorService: AuthorService) {
   }
 
 
   ngOnInit(): void {
-    this.sub = this.authorService.getAuthors().subscribe({
+    this.sub.add(this.authorService.getAuthors().subscribe({
       next: authors => this.authors = authors,
       error: err => this.errorMessage = err
-    });
+    }));
+
+
+    //this.bs$.subscribe((v) => console.log(v))
+    //this.bs.next('test');
   }
 
   ngOnDestroy(): void {

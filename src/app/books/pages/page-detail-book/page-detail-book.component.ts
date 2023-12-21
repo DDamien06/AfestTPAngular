@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Book } from '../../model/book';
 import { Observable } from 'rxjs';
 import { BookService } from '../../services/book.service';
-import { ActivatedRoute, Router, RouterLink, RouterModule } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, RouterLink, RouterModule } from '@angular/router';
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 
 @Component({
@@ -25,8 +25,25 @@ export class PageDetailBookComponent implements OnInit {
       this.id=Number(activateRoute.snapshot.params['id']);
       this.book$=this.bookService.getBookById(this.id);
     }
-  ngOnInit(): void {}
+  //ngOnInit(): void {}
   
 
-
+  private refreshTable():void{
+    this.bookService.BookById(this.id).subscribe({
+      next: (data) => {this.book$ = this.bookService.getBookById(this.id);
+      },
+    });
+  }
+  
+  ngOnInit(): void { 
+  this.refreshTable();
+    this.router.events.subscribe({
+      next:(value) => {
+        if(value instanceof NavigationEnd){
+          this.id=Number(this.activateRoute.snapshot.params["id"]);
+          this.refreshTable();
+        }
+      }
+    })
+    }
 }

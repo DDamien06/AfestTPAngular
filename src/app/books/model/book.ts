@@ -10,4 +10,9 @@ export class Book implements BookI{
     price!: number;
     bookType!: BookType;
     available!: boolean;
+
+    getAuthorName():String {
+        return this.author.authorLastName;
+    }
+
 }

@@ -1,7 +1,9 @@
+import { Book } from "../../books/model/book";
 import { AuthorI } from "./author-i";
 
 export class Author implements AuthorI {
     authorId!: number;
-    first_name!: String;
-    last_name!: String;
+    authorFirstName!: String;
+    authorLastName!: String;
+    books!: Book[];
 }

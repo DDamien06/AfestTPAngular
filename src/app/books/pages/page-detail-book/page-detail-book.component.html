@@ -1,4 +1,14 @@
 <p>page-detail-book works!</p><br>
+
 <div *ngIf="book$ | async">
     <h1> Livre : {{(book$| async)?.title}}</h1>
+    <div> 
+        Title : {{(book$ | async)?.title}}<br>
+        Type : {{(book$ | async)?.bookType}}<br>
+        Prix : {{(book$ | async)?.price}}€<br>
+        Auteur : {{(book$ | async)?.author}}<br>
+        Disponible : {{(book$ | async)?.available}}
+
+
+    </div>
 </div>

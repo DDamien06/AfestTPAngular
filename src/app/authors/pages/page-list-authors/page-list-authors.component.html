@@ -1,5 +1,5 @@
 <h2>La liste des Auteurs</h2>
 <ul *ngFor="let author Of authors">
-    <li><a [routerLink]="['/authors', author.authorId]">{{author.first_name}} {{author.last_name}}</a></li>
+    <li><a [routerLink]="['/authors', author.authorId]">{{author.authorFirstName}} {{author.authorLastName}}</a></li>
 </ul>
-<button mat-raised-button>Ajouter un nouvel Auteur</button>
+<a routerLink="/author/add"><button mat-raised-button>Ajouter un nouvel Auteur</button></a>

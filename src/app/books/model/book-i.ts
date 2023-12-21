@@ -11,4 +11,5 @@ export interface BookI {
     bookType:BookType;
     available:boolean;
 
+
 }

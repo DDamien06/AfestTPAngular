@@ -1,4 +1,4 @@
-import { AsyncPipe, NgIf } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -6,12 +6,13 @@ import { ActivatedRoute, NavigationEnd, Router, RouterLink, RouterModule } from 
 import { Observable, Subscription } from 'rxjs';
 import { Author } from '../../model/author';
 import { AuthorService } from '../../services/author.service';
+import { Book } from '../../../books/model/book';
 
 
 @Component({
   selector: 'app-page-detail-author',
   standalone: true,
-  imports: [NgIf,MatButtonModule,MatIconModule,RouterLink,RouterModule,AsyncPipe],
+  imports: [NgIf,NgFor,MatButtonModule,MatIconModule,RouterLink,RouterModule,AsyncPipe],
   templateUrl: './page-detail-author.component.html',
   styleUrl: './page-detail-author.component.scss'
 })
@@ -20,9 +21,10 @@ export class PageDetailAuthorComponent implements OnInit, OnDestroy {
   sub!:Subscription;
   public id: number;
   public author$: Observable<Author|null>;
-  //public authorDetail:Author|null=null;
+  public authorDetail:Author|null=null;
   //public authorExist:boolean=true;
 
+  
 
   constructor(
     private router:Router,
@@ -33,6 +35,7 @@ export class PageDetailAuthorComponent implements OnInit, OnDestroy {
   }
 
 goPreviousPage():void{
+  if(this.id>1)
   this.router.navigate(['authors',this.id-1])
 }
 

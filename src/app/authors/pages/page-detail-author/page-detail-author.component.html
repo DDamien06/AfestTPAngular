@@ -1,9 +1,9 @@
 <div *ngIf='author$ | async ; else notAvailable'>
-<h1>AUTEUR : {{(author$| async)?.first_name}} {{(author$ | async)?.last_name}}</h1>
-<div><p>Nom : {{(author$ | async)?.last_name}}<br>
-    Prénom : {{(author$ | async)?.first_name}}<br>
-    Auteur des livres : <!--{{(author$ | async)?.}}<br> -->
-</p>
+<h1>AUTEUR : {{(author$| async)?.authorFirstName}} {{(author$ | async)?.authorLastName}}</h1>
+<div>Nom : {{(author$ | async)?.authorLastName}}<br>
+    Prénom : {{(author$ | async)?.authorFirstName}}<br>
+    Auteur des livres : {{(author$ | async)?.books}}     <br>
+
 </div>
 
 

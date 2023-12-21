@@ -39,7 +39,7 @@ public addAuthor(item : Author): Observable<Author>{
 }
 
 public deleteAuthor(id:number): Observable<Author>{
-  return this.http.delete<Author>(`${this.authorUrl}/{'id'}`)
+  return this.http.delete<Author>(`${this.authorUrl}/{id}`)
 }
 
 }

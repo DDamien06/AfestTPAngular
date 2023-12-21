@@ -1,8 +1,11 @@
+import { Book } from "../../books/model/book";
+
 export interface AuthorI {
 
     authorId:number;
-    first_name:String;
-    last_name:String;
+    authorFirstName:String;
+    authorLastName:String;
+    books:Book[];
     
 
 }
