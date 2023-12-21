@@ -1,3 +1,4 @@
 <p>page-detail-book works!</p><br>
-
-<p> Le livre choisi est {{book.title}}</p>
+<div *ngIf="book$ | async">
+    <h1> Livre : {{(book$| async)?.title}}</h1>
+</div>

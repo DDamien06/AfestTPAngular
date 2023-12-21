@@ -9,8 +9,8 @@ import { Author } from '../model/author';
 })
 export class AuthorService {
 
-  private authorUrl = 'assets/authors.json';
-  //private authorUrl = 'http://localhost:8080/authors';
+  //private authorUrl = 'assets/authors.json';
+  private authorUrl = 'http://localhost:8080/authors';
 
 
 
